@@ -42,9 +42,12 @@ public class UserServiceImpl implements UserService{
 
 	Logger logger=LoggerFactory.getLogger(UserServiceImpl.class);
 
-    MongoClient mongoClient =  MongoClients.create("mongodb://cosmomongdb:gRbL7SE8y25ryl0bPuA354lG68y09Ogrpnlrb3APJQmTHawW3p43ymr0ecvRv98JQzpZHytpL1yajaebEj3h3Q==@cosmomongdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmomongdb@");
-    MongoDatabase database = mongoClient.getDatabase("TweetApp");
-
+   @Value("spring.data.mongodb.uri")
+	String uri;
+	@Value("spring.data.mongodb.database")
+	String databasename;
+    MongoClient mongoClient =  MongoClients.create(uri);
+    MongoDatabase database = mongoClient.getDatabase(databasename);
     MongoCollection<Document> collection = database.getCollection("User");
     
     MongoCollection<Document> collectiontweet = database.getCollection("Tweet");
