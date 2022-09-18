@@ -146,7 +146,7 @@ public class UserServiceImpl implements UserService{
     //username & password as input -> success if credentials are right
     @Override
     public User login(String username, String password) {
-        User user;
+        User user=null;
         ObjectMapper mapper= new ObjectMapper();
         Iterable<Document> iterable=collection.find(Filters.eq("userName",username));
         Iterator<Document> cursor= iterable.iterator();
