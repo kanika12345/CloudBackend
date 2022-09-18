@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService{
 
 	Logger logger=LoggerFactory.getLogger(UserServiceImpl.class);
 
-   MongoClient mongoClient =  MongoClients.create("mongodb://cosmomongdb:gRbL7SE8y25ryl0bPuA354lG68y09Ogrpnlrb3APJQmTHawW3p43ymr0ecvRv98JQzpZHytpL1yajaebEj3h3Q==@cosmomongdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmomongdb@");
+   MongoClient mongoClient =  MongoClients.create("mongodb://cosmomongo:fg2hoKvr1m4k2jcQ4c8AH3BmCEw2oYTMyKUJJ6DY4qr3dyu13c6yvSuxxE1OU9YChAu3v7bi6AofbpCuvmU2sQ==@cosmomongo.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmomongo@");
     MongoDatabase database = mongoClient.getDatabase("TweetApp");
     MongoCollection<Document> collection = database.getCollection("User");
     
