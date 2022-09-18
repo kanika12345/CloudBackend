@@ -164,7 +164,7 @@ public class UserServiceImpl implements UserService{
   				e.printStackTrace();
   			}
           }
-  			return null;
+  			return user;
         /*try{
             user = userRepo.findUserByUserNameAndPassword(username,password);
             System.out.println(user.getEmail());
